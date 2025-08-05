@@ -118,8 +118,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Contact
 
-Your Name - [your-email@example.com]
-Project Link: [https://github.com/yourusername/your-repo-name]
+Sai Charan - [charankatta49@gmail.com]
+Project Link:(https://github.com/kattacharan/portfolio/edit/main/README.md)
 
 ---
-Made with ❤️ by [Your Name] 
+Made with ❤️ by Sai Charan 
