@@ -1,317 +1,1002 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Charan Katta - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katta Sai Charan — Data Science & AI Engineer</title>
+  <meta name="description" content="Katta Sai Charan — Data Science, AI/ML, Data Engineering and Cloud professional. Test Engineer Intern at Nokia. Building intelligent data systems, automation workflows and cloud-native solutions.">
+  <meta name="author" content="Katta Sai Charan">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="Katta Sai Charan — Data Science & AI Engineer">
+  <meta property="og:description" content="Building intelligent data systems, automation workflows and cloud-native solutions.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">SK</a>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#hackathons">Hackathons</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                </ul>
-                <button class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       FLOATING NAVIGATION
+       ============================================================ -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Katta Sai Charan — Home">KSC</a>
+      <div class="nav-sections" id="navSections">
+        <a href="#hero"       class="nav-item active" data-section="hero">       <span class="nav-num">01</span><span class="nav-label">HOME</span></a>
+        <a href="#about"      class="nav-item"        data-section="about">      <span class="nav-num">02</span><span class="nav-label">ABOUT</span></a>
+        <a href="#experience" class="nav-item"        data-section="experience"> <span class="nav-num">03</span><span class="nav-label">EXPERIENCE</span></a>
+        <a href="#work"       class="nav-item"        data-section="work">       <span class="nav-num">04</span><span class="nav-label">WORK</span></a>
+        <a href="#stack"      class="nav-item"        data-section="stack">      <span class="nav-num">05</span><span class="nav-label">STACK</span></a>
+        <a href="#education"  class="nav-item"        data-section="education">  <span class="nav-num">06</span><span class="nav-label">EDUCATION</span></a>
+        <a href="#contact"    class="nav-item"        data-section="contact">    <span class="nav-num">07</span><span class="nav-label">CONTACT</span></a>
+      </div>
+      <button class="nav-menu-toggle" id="navMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="#hero"       class="mobile-nav-link">01 &mdash; HOME</a>
+      <a href="#about"      class="mobile-nav-link">02 &mdash; ABOUT</a>
+      <a href="#experience" class="mobile-nav-link">03 &mdash; EXPERIENCE</a>
+      <a href="#work"       class="mobile-nav-link">04 &mdash; WORK</a>
+      <a href="#stack"      class="mobile-nav-link">05 &mdash; STACK</a>
+      <a href="#education"  class="mobile-nav-link">06 &mdash; EDUCATION</a>
+      <a href="#contact"    class="mobile-nav-link">07 &mdash; CONTACT</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE 01 — HERO
+       ============================================================ -->
+  <section id="hero" class="section section--hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-meta">
+        <span class="meta-tag">COMPUTER SCIENCE &times; DATA SCIENCE</span>
+      </div>
+      <div class="hero-name">
+        <h1 class="display-name">
+          <span class="name-line reveal-line">KATTA</span>
+          <span class="name-line reveal-line">SAI</span>
+          <span class="name-line reveal-line">CHARAN</span>
+        </h1>
+      </div>
+      <div class="hero-identity reveal-fade">
+        <p class="hero-domains">Data &nbsp;&middot;&nbsp; AI &nbsp;&middot;&nbsp; Cloud &nbsp;&middot;&nbsp; Automation</p>
+        <p class="hero-statement">Building intelligent data systems, automation workflows<br class="br-desktop"> and cloud-native solutions.</p>
+      </div>
+      <div class="hero-ctas reveal-fade">
+        <a href="#work" class="btn-primary" id="heroExploreCta">EXPLORE WORK &darr;</a>
+        <div class="hero-socials">
+          <a href="https://github.com/sattacharan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+            <i class="fab fa-github" aria-hidden="true"></i>&nbsp;GitHub
+          </a>
+          <a href="https://linkedin.com/in/katta-sai-charan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>&nbsp;LinkedIn
+          </a>
         </div>
-    </nav>
+      </div>
+      <div class="hero-scroll-hint reveal-fade" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">SCROLL</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-header">
-                <div class="profile-image">
-                    <img src="charan passport size.jpg" alt="Sai Charan Katta" class="profile-img">
-                </div>
-                <div class="hero-text">
-                    <h1>Sai Charan Katta</h1>
-                    <div class="sliding-text">
-                        <div class="sliding-words">
-                            <span>Python Developer</span>
-                            <span>Data Analyst</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> +91 9949805144</p>
-                <p><i class="fas fa-envelope"></i> charankatta49@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
-            </div>
-            <div class="scroll-indicator">
-                <i class="fas fa-chevron-down"></i>
-            </div>
+  <!-- ============================================================
+       PAGE 02 — IDENTITY / ABOUT
+       ============================================================ -->
+  <section id="about" class="section section--about">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">02</span>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <div class="about-layout">
+        <div class="about-headline">
+          <h2 class="display-section">ENGINEERING<br>WITH DATA,<br>AI &amp; SYSTEMS.</h2>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="card">
-            <p>M.Tech Computer Science student with a good understanding of programming, problem-solving, and core computer science concepts. Skilled in Python and familiar with AI, Machine Learning, and Deep Learning. Built real-time projects using NLP, Computer Vision, APIs, and dashboards. Quick learner, flexible with tools and technologies, and ready to work in different roles like software development, data analysis, or AI-based applications.</p>
+        <div class="about-content">
+          <p class="about-text">Computer Science graduate specialising in Data Science with hands-on experience in Python automation, Linux, Robot Framework, and cloud-native technologies through Nokia. Skilled in Python, SQL, Machine Learning, REST APIs, Kubernetes, OpenShift, Git, Jenkins, and CI/CD.</p>
+          <p class="about-text">Strong foundation in software engineering, data structures, and problem-solving. Currently building at the intersection of AI, data engineering, and enterprise automation.</p>
+          <p class="about-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; Hyderabad, Telangana, India</p>
         </div>
-    </section>
+      </div>
+      <div class="identity-words" aria-label="Core competency areas">
+        <span class="identity-word">DATA</span>
+        <span class="identity-word">AI</span>
+        <span class="identity-word">AUTOMATION</span>
+        <span class="identity-word">CLOUD</span>
+        <span class="identity-word">SYSTEMS</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2 class="section-title">Education Journey</h2>
-        <div class="education-grid">
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>Integrated M.Tech in Computer Science (Data Science Specialization)</h3>
-                    <span class="education-year">2021 - Present</span>
-                </div>
-                <p>Vellore Institute of Technology, Vellore</p>
-                <p>GPA: 8.34/10.00</p>
-            </div>
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>Intermediate (MPC)</h3>
-                    <span class="education-year">Graduated: 2021</span>
-                </div>
-                <p>Narayana Junior College, Hyderabad</p>
-                <p>Marks: 958/1000</p>
-            </div>
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>Secondary Education (SSC)</h3>
-                    <span class="education-year">Graduated: 2019</span>
-                </div>
-                <p>Ravindra Bharathi School, Hyderabad</p>
-                <p>GPA: 9.7/10</p>
-            </div>
+  <!-- ============================================================
+       PAGE 03 — EXPERIENCE
+       ============================================================ -->
+  <section id="experience" class="section section--experience">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">01</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">EXPERIENCE</h2>
+      </div>
+      <div class="exp-card" id="expCardMain">
+        <div class="exp-card-accent" aria-hidden="true"></div>
+        <div class="exp-card-left">
+          <div class="exp-company" aria-label="Company: Nokia">NOKIA</div>
+          <div class="exp-meta">
+            <span class="exp-role">Test Engineer Intern &mdash; Cloud Platform Integration</span>
+            <span class="exp-meta-sep" aria-hidden="true">&mdash;</span>
+            <span class="exp-location">Bengaluru, India</span>
+          </div>
+          <div class="exp-dates">Aug 2025 &mdash; Jun 2026</div>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Website Evaluation using Opinion Mining</h3>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>BeautifulSoup</span>
-                        <span>NLTK</span>
-                        <span>TextBlob</span>
-                        <span>VADER</span>
-                        <span>Scikit-learn</span>
-                        <span>SMOTE</span>
-                        <span>Jupyter Notebook</span>
-                    </div>
-                    <ul>
-                        <li>Implemented a sentiment analysis system to evaluate e-learning platforms (Coursera, Udemy, edX) using web-scraped reviews from Trustpilot.</li>
-                        <li>Used BeautifulSoup for scraping, NLTK for preprocessing, and a hybrid of TextBlob and VADER for sentiment scoring.</li>
-                        <li>Built and trained a SMOTE-stacked ensemble model to handle class imbalance, achieving robust sentiment classification.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Movie Recommendation System</h3>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Streamlit</span>
-                        <span>TMDB API</span>
-                        <span>NLP</span>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li>Developed a Movie Recommendation System using Python and NLP techniques</li>
-                            <li>Implemented the system in PyCharm, leveraging Streamlit for UI</li>
-                            <li>Created an interactive interface for users to explore movie suggestions</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Stocks Dashboard</h3>
-                    <div class="project-tech">
-                        <span>Power BI</span>
-                        <span>SQL</span>
-                        <span>DAX</span>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li>Developed an interactive Power BI Stocks Dashboard</li>
-                            <li>Implemented SQL queries and DAX measures for dynamic filtering</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Sign Language Recognition</h3>
-                    <div class="project-tech">
-                        <span>OpenCV</span>
-                        <span>Mediapipe</span>
-                        <span>MobileNet v2</span>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li>Trained machine learning models using benchmark datasets</li>
-                            <li>Used MediaPipe to extract hand coordinates in real time</li>
-                            <li>Implemented real-time prediction system with performance evaluation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Task Automation Bot</h3>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Automation</span>
-                        <span>Task Scheduling</span>
-                        <span>PyAutoGUI</span>
-                        <span>Tkinter</span>
-                        <span>GitHub</span>
-                    </div>
-                    <div class="project-features">
-                        <ul>
-                            <li>Developed a desktop-based automation bot to perform repetitive tasks like launching applications, automating clicks/typing, and file handling.</li>
-                            <li>Utilized PyAutoGUI for cross-platform GUI automation and Tkinter to create a lightweight and user-friendly interface.</li>
-                            <li>Added customizable task triggers for various workflows such as scheduled execution, button clicks, or hotkeys.</li>
-                            <li>Open-sourced the project on GitHub to enable productivity automation.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="exp-card-right">
+          <p class="exp-summary">Engineered 5G Cloud RAN (vCU/vDU/CP) validation, automated test frameworks, and infrastructure telemetry across Red Hat OpenShift (OCP) bare-metal environments (SNO/MNO). Automated capacity, performance benchmarking, and Non-Functional Requirement (NFR) regression suites using Python and Robot Framework &mdash; evaluating hardware power/thermal metrics, node downtime, and CNF lifecycle stability.</p>
+          <div class="exp-tags" role="list" aria-label="Technologies used">
+            <span role="listitem">Python</span>
+            <span role="listitem">Robot Framework</span>
+            <span role="listitem">OpenShift (OCP)</span>
+            <span role="listitem">Kubernetes</span>
+            <span role="listitem">Docker</span>
+            <span role="listitem">Helm</span>
+            <span role="listitem">5G Cloud RAN</span>
+            <span role="listitem">CNF</span>
+            <span role="listitem">NFR Automation</span>
+            <span role="listitem">Jenkins CI/CD</span>
+            <span role="listitem">NADCM</span>
+            <span role="listitem">NEAT</span>
+          </div>
+          <button class="btn-text" id="openExpOverlay" aria-label="View full Nokia experience details">VIEW EXPERIENCE &rarr;</button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                <div class="skill-items">
-                    <span>Python</span>
-                    <span>Java</span>
-                    <span>C</span>
-                    <span>C++</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
-                <div class="skill-items">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript (Basic)</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-chart-line"></i> Data Analytics & Visualization</h3>
-                <div class="skill-items">
-                    <span>Power BI</span>
-                    <span>Jupyter Notebook</span>
-                    <span>VS Code</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-                <div class="skill-items">
-                    <span>Scikit-learn</span>
-                    <span>TensorFlow</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> Database Technologies</h3>
-                <div class="skill-items">
-                    <span>SQL</span>
-                    <span>MongoDB (Basic CRUD)</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Operating Systems</h3>
-                <div class="skill-items">
-                    <span>Linux (Command-line)</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-cloud"></i> Cloud Technologies</h3>
-                <div class="skill-items">
-                    <span>Docker</span>
-                    <span>Microsoft Azure</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-cogs"></i> Computer Science Fundamentals</h3>
-                <div class="skill-items">
-                    <span>Data Structures & Algorithms</span>
-                    <span>Object-Oriented Programming</span>
-                </div>
-            </div>
+  <!-- Experience Detail Overlay -->
+  <div class="overlay" id="expOverlay" role="dialog" aria-modal="true" aria-label="Nokia Experience Details" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeExpOverlay" aria-label="Close experience overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">01 &mdash; EXPERIENCE</span>
+          <span class="overlay-company">NOKIA &bull; CLOUD PLATFORM INTEGRATION</span>
         </div>
-    </section>
+        <h2 class="overlay-title">Test Engineer Intern</h2>
+        <p class="overlay-subtitle">Bengaluru, India &nbsp;&middot;&nbsp; Aug 2025 &mdash; Jun 2026</p>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li>
-                <i class="fab fa-microsoft"></i>
-                <h3>Microsoft Certified Azure AI Fundamentals</h3>
-            </li>
-            <li>
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Analytics Essentials (Cisco Certified)</h3>
-            </li>
-        </ul>
-    </section>
-
-    <!-- Hackathons Section -->
-    <section id="hackathons">
-        <h2 class="section-title">Hackathons & Competitions</h2>
-        <div class="hackathons-grid">
-            <div class="hackathon-card">
-                <div class="hackathon-header">
-                    <h3>Accelerate Her in Tech</h3>
-                    <span class="hackathon-date">July 2024</span>
-                </div>
-                <div class="hackathon-org">
-                    <i class="fas fa-building"></i>
-                    <span>Nokia</span>
-                </div>
-                <p class="hackathon-status">Selected - Round 2</p>
-                <p class="hackathon-desc">Showcased coding skills and contributed to promoting gender diversity in tech through inclusive innovation.</p>
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">01 &mdash; 5G CLOUD RAN &amp; CLOUD-NATIVE ORCHESTRATION</h3>
+            <ul class="overlay-list">
+              <li>Deployed, orchestrated, and validated 5G Cloud RAN containerized workloads (vCU, vDU, Control Plane) and Cloud-Native Network Functions (CNF) across Single Node OpenShift (SNO), SNO+1, and Multi-Node OpenShift (MNO) clusters.</li>
+              <li>Automated CNF lifecycle orchestration, Helm chart templating, and kubeconfig cluster targeting using enterprise orchestration platforms (Kuafu, MantaRay).</li>
+              <li>Executed Radio Unit (RU) configuration, SCF commissioning, L3 call flow verification, and multi-system integration across NEAT, CCR, and OpenShift.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">02 &mdash; BARE-METAL INFRASTRUCTURE &amp; FIRMWARE AUTOMATION</h3>
+            <ul class="overlay-list">
+              <li>Provisioned bare-metal hardware discovery, automated OCP cluster deployment, and managed hardware-level firmware upgrades (BIOS, BMC, and ESW) across enterprise multi-vendor server architectures (Dell PowerEdge, HPE ProLiant, OE).</li>
+              <li>Leveraged Nokia NEAT and NADCM for centralized infrastructure discovery, declarative deployment, and lab topology configuration.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">03 &mdash; CAPACITY &amp; PERFORMANCE (C&amp;P) TELEMETRY</h3>
+            <ul class="overlay-list">
+              <li>Engineered capacity validation suites measuring hardware telemetry under dynamic stress &mdash; capturing real-time power dissipation (Wattage), thermal profiles, and fan dynamics via NADCM.</li>
+              <li>Conducted architectural hardware efficiency benchmarking (Dell vs. HPE platform comparison) across release builds to evaluate compute density and energy consumption under maximum load.</li>
+              <li>Profiled end-to-end network throughput, latency, and packet performance using iperf across automated, standard, and compliance test suites.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">04 &mdash; NFR REGRESSION AUTOMATION &amp; FRAMEWORK DEVELOPMENT</h3>
+            <ul class="overlay-list">
+              <li>Architected modular Robot Framework test suites backed by custom Python libraries to transform manual validation into unattended, repeatable regression pipelines.</li>
+              <li>Implemented Non-Functional Requirement (NFR) test workflows targeting OCP cluster provisioning velocity and ESW upgrade/downgrade resilience.</li>
+              <li>Evaluated critical high-availability metrics: SNO/MNO deployment duration, cluster node downtime, CNF failover intervals, and cross-release stability scorecards.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">05 &mdash; CI/CD INTEGRATION &amp; AI-AUGMENTED TEST ENGINEERING</h3>
+            <ul class="overlay-list">
+              <li>Integrated automated test suites into continuous regression workflows using Git version control and Jenkins CI/CD pipelines.</li>
+              <li>Utilized AI-assisted engineering tools (GitHub Copilot, Cursor, Nokia Internal GPT, OpenAI GPT) to accelerate test script refactoring, comprehend legacy codebases, and optimize automated test coverage while maintaining rigorous lab validation standards.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">06 &mdash; CORE DOMAINS &amp; TOOLCHAIN</h3>
+            <div class="overlay-tags" role="list" aria-label="Technologies">
+              <span role="listitem">Python</span>
+              <span role="listitem">Robot Framework</span>
+              <span role="listitem">Kubernetes</span>
+              <span role="listitem">OpenShift (OCP)</span>
+              <span role="listitem">Docker</span>
+              <span role="listitem">Helm</span>
+              <span role="listitem">5G Cloud RAN</span>
+              <span role="listitem">CNF</span>
+              <span role="listitem">vCU / vDU / CP</span>
+              <span role="listitem">Bare-Metal Provisioning</span>
+              <span role="listitem">Capacity &amp; Performance</span>
+              <span role="listitem">NFR Automation</span>
+              <span role="listitem">Dell &amp; HPE Systems</span>
+              <span role="listitem">NADCM</span>
+              <span role="listitem">NEAT</span>
+              <span role="listitem">iperf</span>
+              <span role="listitem">Jenkins CI/CD</span>
+              <span role="listitem">Git</span>
+              <span role="listitem">AI-Assisted DevOps</span>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Sai Charan Katta. All rights reserved.</p>
+  <!-- ============================================================
+       PAGE 04 + 05 — WORK (FEATURED + OTHER PROJECTS)
+       ============================================================ -->
+  <section id="work" class="section section--work">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">02</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">SELECTED WORK</h2>
+      </div>
+
+      <!-- Featured Project -->
+      <div class="featured-project">
+        <p class="featured-eyebrow" aria-hidden="true">FEATURED PROJECT</p>
+        <div class="featured-card" id="openProject1" role="button" tabindex="0" aria-label="Open Multi-Agent Enterprise Knowledge Assistant case study">
+          <div class="featured-card-glow" aria-hidden="true"></div>
+          <div class="featured-card-inner">
+            <div class="featured-card-left">
+              <span class="featured-index accent" aria-hidden="true">01</span>
+              <h3 class="featured-title">
+                MULTI&#8209;AGENT<br>
+                ENTERPRISE<br>
+                KNOWLEDGE<br>
+                ASSISTANT
+              </h3>
+              <div class="featured-tech" role="list" aria-label="Technologies">
+                <span role="listitem">Python</span>
+                <span role="listitem">FastAPI</span>
+                <span role="listitem">LangChain</span>
+                <span role="listitem">LangGraph</span>
+                <span role="listitem">OpenAI API</span>
+                <span role="listitem">Hugging Face</span>
+                <span role="listitem">FAISS</span>
+                <span role="listitem">SQLite</span>
+              </div>
+            </div>
+            <div class="featured-card-right">
+              <div class="featured-visual" aria-hidden="true">
+                <div class="arch-flow">
+                  <div class="arch-node">DOCUMENTS</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node">INGESTION</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node arch-node--accent">EMBEDDINGS</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node arch-node--accent">FAISS</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node arch-node--accent">LANGGRAPH</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node">AGENTS</div>
+                  <div class="arch-arrow">&darr;</div>
+                  <div class="arch-node">RESPONSE</div>
+                </div>
+              </div>
+              <button class="btn-primary featured-cta">VIEW CASE STUDY &rarr;</button>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+      <!-- Other Projects -->
+      <div class="other-projects">
+        <p class="other-projects-label" aria-hidden="true">03 &nbsp;&mdash;&nbsp; OTHER WORK</p>
+        <div class="other-projects-list">
 
-    <script src="script.js"></script>
+          <!-- Project 02: Website Evaluation -->
+          <div class="other-project-row" id="openProject2" role="button" tabindex="0" aria-label="Open Website Evaluation using Opinion Mining project details">
+            <div class="op-left">
+              <span class="op-index" aria-hidden="true">02</span>
+              <h3 class="op-title">WEBSITE EVALUATION<br>USING OPINION MINING</h3>
+            </div>
+            <div class="op-right">
+              <div class="op-tech" role="list" aria-label="Technologies">
+                <span role="listitem">Python</span><span role="listitem">BeautifulSoup</span>
+                <span role="listitem">NLTK</span><span role="listitem">TextBlob</span>
+                <span role="listitem">VADER</span><span role="listitem">TF-IDF</span>
+                <span role="listitem">Ensemble (NB+LR+RF)</span><span role="listitem">SMOTE</span>
+              </div>
+              <p class="op-desc">Automated sentiment analysis system evaluating websites from scraped TrustPilot user reviews &mdash; leveraging NLTK preprocessing, hybrid lexicon scoring, and a stacked ensemble classifier (70% accuracy) with SMOTE.</p>
+              <span class="op-cta" aria-hidden="true">EXPLORE &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Project 03: Task Automation Bot -->
+          <div class="other-project-row" id="openProject3" role="button" tabindex="0" aria-label="Open Task Automation Bot project details">
+            <div class="op-left">
+              <span class="op-index" aria-hidden="true">03</span>
+              <h3 class="op-title">TASK AUTOMATION<br>BOT</h3>
+            </div>
+            <div class="op-right">
+              <div class="op-tech" role="list" aria-label="Technologies">
+                <span role="listitem">Python</span><span role="listitem">Streamlit</span>
+                <span role="listitem">SpeechRecognition</span><span role="listitem">pyttsx3</span>
+                <span role="listitem">PyAutoGUI</span><span role="listitem">Schedule</span>
+                <span role="listitem">PyPDF2</span>
+              </div>
+              <p class="op-desc">Multi-modal desktop assistant combining voice recognition and interactive Streamlit UI &mdash; featuring smart scheduling, automated file organization, and system-wide PDF search.</p>
+              <span class="op-cta" aria-hidden="true">EXPLORE &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Project 04: Movie Recommendation System -->
+          <div class="other-project-row" id="openProject4" role="button" tabindex="0" aria-label="Open Movie Recommendation System project details">
+            <div class="op-left">
+              <span class="op-index" aria-hidden="true">04</span>
+              <h3 class="op-title">CONTENT-BASED MOVIE<br>RECOMMENDER SYSTEM</h3>
+            </div>
+            <div class="op-right">
+              <div class="op-tech" role="list" aria-label="Technologies">
+                <span role="listitem">Python</span><span role="listitem">Streamlit</span>
+                <span role="listitem">Scikit-learn</span><span role="listitem">Cosine Similarity</span>
+                <span role="listitem">TMDb REST API</span><span role="listitem">Pickle</span>
+                <span role="listitem">Pandas</span>
+              </div>
+              <p class="op-desc">Machine learning recommendation engine computing high-dimensional cosine similarity over metadata matrices, integrated with TMDb API for dynamic poster hydration and instant search.</p>
+              <span class="op-cta" aria-hidden="true">EXPLORE &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Project 05: Stocks Market Analytics Dashboard -->
+          <div class="other-project-row" id="openProject5" role="button" tabindex="0" aria-label="Open Stocks Market Analytics Dashboard project details">
+            <div class="op-left">
+              <span class="op-index" aria-hidden="true">05</span>
+              <h3 class="op-title">STOCKS MARKET<br>ANALYTICS DASHBOARD</h3>
+            </div>
+            <div class="op-right">
+              <div class="op-tech" role="list" aria-label="Technologies">
+                <span role="listitem">Power BI</span><span role="listitem">SQL</span>
+                <span role="listitem">Python</span><span role="listitem">DAX</span>
+                <span role="listitem">Yahoo Finance API</span><span role="listitem">Financial KPIs</span>
+                <span role="listitem">RSI / MACD</span><span role="listitem">NLP News Sentiment</span>
+              </div>
+              <p class="op-desc">Interactive financial analytics platform synthesizing multi-source market data &mdash; featuring 3 specialized dashboards (Overview, Company Profile, Financial Performance) with real-time tickers, KPIs, technical indicators, and news sentiment.</p>
+              <span class="op-cta" aria-hidden="true">EXPLORE &rarr;</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 1 Overlay: Multi-Agent RAG -->
+  <div class="overlay" id="project1Overlay" role="dialog" aria-modal="true" aria-label="Multi-Agent Knowledge Assistant Case Study" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeProject1" aria-label="Close case study overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">PROJECT 01</span>
+        </div>
+        <h2 class="overlay-title">Multi-Agent Enterprise<br>Knowledge Assistant</h2>
+
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">THE ARCHITECTURE</h3>
+            <div class="case-arch-flow" aria-label="System architecture flow">
+              <div class="ca-node">DOCUMENTS</div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">INGESTION</div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">EMBEDDINGS<br><small>Hugging Face</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">FAISS<br><small>Vector Search</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">LANGGRAPH<br><small>Multi-Agent</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">FASTAPI<br><small>REST API</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">RESPONSE<br><small>+ Citations</small></div>
+            </div>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">ENGINEERING HIGHLIGHTS</h3>
+            <ul class="overlay-list">
+              <li>Designed LangGraph-based multi-agent supervisor workflows coordinating specialized agents for document retrieval, verification, and grounded response synthesis.</li>
+              <li>Engineered semantic chunking, embedding generation (Hugging Face), and low-latency similarity search using FAISS vector indexing.</li>
+              <li>Built production-ready FastAPI REST endpoints with token telemetry, asynchronous processing, and SQLite conversation state persistence.</li>
+              <li>Implemented citation validation workflows ensuring generated answers are strictly grounded in retrieved enterprise knowledge sources.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">TECHNOLOGIES</h3>
+            <div class="overlay-tags" role="list">
+              <span role="listitem">Python</span><span role="listitem">FastAPI</span>
+              <span role="listitem">LangChain</span><span role="listitem">LangGraph</span>
+              <span role="listitem">OpenAI API</span><span role="listitem">Hugging Face</span>
+              <span role="listitem">FAISS</span><span role="listitem">SQLite</span>
+              <span role="listitem">RAG</span><span role="listitem">Agentic AI</span>
+              <span role="listitem">Vector Search</span><span role="listitem">REST API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 2 Overlay: Website Evaluation -->
+  <div class="overlay" id="project2Overlay" role="dialog" aria-modal="true" aria-label="Website Evaluation Project Details" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeProject2" aria-label="Close project overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">PROJECT 02</span>
+        </div>
+        <h2 class="overlay-title">Website Evaluation<br>Using Opinion Mining</h2>
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">PROJECT OBJECTIVE</h3>
+            <p>With an overwhelming variety of websites available online, users frequently struggle to discern which platform is genuinely trustworthy and superior. This system automates website evaluation by scraping real user reviews and star ratings, running sentiment analysis, and ranking platforms based on transparent, opinion-mined metrics &mdash; helping consumers choose better services while giving website owners actionable customer feedback.</p>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">SYSTEM ARCHITECTURE</h3>
+            <div class="case-arch-flow" aria-label="System architecture flow">
+              <div class="ca-node">TRUSTPILOT REVIEWS<br><small>BeautifulSoup Scraping</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">NLTK PIPELINE<br><small>Clean / Tokenize / Lemmatize</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">HYBRID SENTIMENT<br><small>TextBlob + VADER</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">TF-IDF &amp; SMOTE<br><small>Class Imbalance Fix</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">STACKED ENSEMBLE<br><small>NB + LR + Random Forest</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">WEBSITE SCORE<br><small>~70% Accuracy</small></div>
+            </div>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">ENGINEERING HIGHLIGHTS</h3>
+            <ul class="overlay-list">
+              <li><strong>Web Scraping with BeautifulSoup:</strong> Programmatically harvested user reviews, star ratings, and publication timestamps from TrustPilot for premier e-learning platforms including Udemy, Coursera, and edX, organizing datasets into structured Excel repositories.</li>
+              <li><strong>NLTK Preprocessing Pipeline:</strong> Engineered comprehensive natural language text cleaning: special character filtering, case folding, stopword removal, word tokenization, and morphological lemmatization to extract pure contextual semantics.</li>
+              <li><strong>Hybrid Sentiment Lexicon Scoring:</strong> Implemented a dual-scoring framework combining TextBlob (measuring continuous polarity &minus;1 to +1 and subjectivity) with VADER (specialized in handling punctuation intensity, capitalization, and colloquial terms) to categorize reviews into Positive, Negative, and Neutral.</li>
+              <li><strong>Stacked Ensemble Machine Learning Classifier:</strong> Trained a composite ensemble model integrating Multinomial Naive Bayes, Logistic Regression, and Random Forest over TF-IDF feature matrices.</li>
+              <li><strong>SMOTE Class Balancing:</strong> Applied Synthetic Minority Over-sampling Technique (SMOTE) to overcome severe sentiment class skew, boosting model classification accuracy to ~70%.</li>
+              <li><strong>Automated Trust &amp; Quality Scoring:</strong> Evaluates any target website from real customer feedback, outputting comprehensive benchmark scores that demystify platform quality for end-users.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">TECHNOLOGIES</h3>
+            <div class="overlay-tags" role="list">
+              <span role="listitem">Python</span>
+              <span role="listitem">BeautifulSoup</span>
+              <span role="listitem">NLTK</span>
+              <span role="listitem">TextBlob</span>
+              <span role="listitem">VADER</span>
+              <span role="listitem">TF-IDF Vectorizer</span>
+              <span role="listitem">Scikit-learn</span>
+              <span role="listitem">Stacked Ensemble</span>
+              <span role="listitem">Naive Bayes</span>
+              <span role="listitem">Logistic Regression</span>
+              <span role="listitem">Random Forest</span>
+              <span role="listitem">SMOTE</span>
+              <span role="listitem">Pandas</span>
+              <span role="listitem">Excel Data Ingestion</span>
+              <span role="listitem">Opinion Mining</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 3 Overlay: Task Automation Bot -->
+  <div class="overlay" id="project3Overlay" role="dialog" aria-modal="true" aria-label="Task Automation Bot Project Details" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeProject3" aria-label="Close project overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">PROJECT 03</span>
+        </div>
+        <h2 class="overlay-title">Task Automation<br>Bot &amp; Assistant</h2>
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">OVERVIEW</h3>
+            <p>An intelligent, multi-modal desktop assistant and task automation system integrating speech recognition, voice synthesis, scheduling, and local file intelligence with a modern Streamlit user interface.</p>
+            <a href="https://github.com/kattacharan/Task-Automation-Bot" target="_blank" rel="noopener noreferrer" class="overlay-repo-btn">
+              <i class="fab fa-github" aria-hidden="true"></i>&nbsp; VIEW ON GITHUB &rarr;
+            </a>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">SYSTEM ARCHITECTURE</h3>
+            <div class="case-arch-flow" aria-label="System architecture flow">
+              <div class="ca-node">VOICE / UI INPUT</div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">SPEECH ENGINE<br><small>Recognition + pyttsx3</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">COMMAND DISPATCHER</div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">MODULES<br><small>Remind / Organize / Notes</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">OS AUTOMATION<br><small>PyAutoGUI + FS</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">STREAMLIT UI</div>
+            </div>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">ENGINEERING HIGHLIGHTS</h3>
+            <ul class="overlay-list">
+              <li>Engineered dual-interface architecture: robust voice-driven interaction utilizing SpeechRecognition and offline pyttsx3 alongside a real-time Streamlit web UI.</li>
+              <li>Implemented background scheduling daemon using Schedule and python-dateutil for natural language reminders with audio and system notifications.</li>
+              <li>Developed intelligent file management algorithms to automate desktop/download directory organization by parsing file types, extensions, and metadata.</li>
+              <li>Built system-wide document indexing and search utility using PyPDF2, enabling fast local retrieval while preserving complete user data privacy.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">TECHNOLOGIES</h3>
+            <div class="overlay-tags" role="list">
+              <span role="listitem">Python</span><span role="listitem">Streamlit</span>
+              <span role="listitem">SpeechRecognition</span><span role="listitem">pyttsx3</span>
+              <span role="listitem">PyAutoGUI</span><span role="listitem">Schedule</span>
+              <span role="listitem">PyPDF2</span><span role="listitem">python-dotenv</span>
+              <span role="listitem">Automation</span><span role="listitem">Desktop Assistant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 4 Overlay: Movie Recommendation System -->
+  <div class="overlay" id="project4Overlay" role="dialog" aria-modal="true" aria-label="Movie Recommender System Project Details" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeProject4" aria-label="Close project overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">PROJECT 04</span>
+        </div>
+        <h2 class="overlay-title">Content-Based Movie<br>Recommender System</h2>
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">OVERVIEW</h3>
+            <p>A machine learning recommendation engine computing vector cosine similarity over movie metadata matrices, integrated with the TMDb REST API for dynamic poster hydration and deployed via an interactive Streamlit web application.</p>
+            <a href="https://github.com/kattacharan/movies-reccomendation-sys" target="_blank" rel="noopener noreferrer" class="overlay-repo-btn">
+              <i class="fab fa-github" aria-hidden="true"></i>&nbsp; VIEW ON GITHUB &rarr;
+            </a>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">SYSTEM ARCHITECTURE</h3>
+            <div class="case-arch-flow" aria-label="System architecture flow">
+              <div class="ca-node">METADATA CORPUS<br><small>Cast / Crew / Genres / Tags</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">VECTORIZATION<br><small>CountVectorizer</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">COSINE SIMILARITY<br><small>Matrix Computation</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">TOP-K RETRIEVAL</div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">TMDB REST API<br><small>Poster Fetch</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">STREAMLIT UI</div>
+            </div>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">ENGINEERING HIGHLIGHTS</h3>
+            <ul class="overlay-list">
+              <li>Processed high-dimensional metadata (genres, keywords, cast, crew, overviews) into unified textual tags, stemming tokens to minimize vocabulary sparsity.</li>
+              <li>Constructed a dense cosine similarity matrix enabling sub-millisecond Top-5 neighbor retrieval based on vector angular distance.</li>
+              <li>Optimized production inference latency by serializing trained models and similarity matrices using Pickle.</li>
+              <li>Integrated asynchronous TMDb REST API requests to hydrate recommended movie cards with high-resolution visual artwork dynamically.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">TECHNOLOGIES</h3>
+            <div class="overlay-tags" role="list">
+              <span role="listitem">Python</span><span role="listitem">Streamlit</span>
+              <span role="listitem">Scikit-learn</span><span role="listitem">Cosine Similarity</span>
+              <span role="listitem">Pandas</span><span role="listitem">NumPy</span>
+              <span role="listitem">TMDb REST API</span><span role="listitem">Pickle</span>
+              <span role="listitem">Information Retrieval</span><span role="listitem">Recommendation Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 5 Overlay: Stocks Market Analytics Dashboard -->
+  <div class="overlay" id="project5Overlay" role="dialog" aria-modal="true" aria-label="Stocks Market Analytics Dashboard Project Details" tabindex="-1">
+    <div class="overlay-inner">
+      <button class="overlay-close" id="closeProject5" aria-label="Close project overlay">&times;&nbsp; CLOSE</button>
+      <div class="overlay-content">
+        <div class="overlay-meta">
+          <span class="overlay-num accent">PROJECT 05</span>
+        </div>
+        <h2 class="overlay-title">Stocks Market<br>Analytics Dashboard</h2>
+        <p class="overlay-subtitle">Power BI &nbsp;&middot;&nbsp; SQL &nbsp;&middot;&nbsp; Python &nbsp;&middot;&nbsp; DAX &nbsp;&middot;&nbsp; Financial Analytics</p>
+
+        <div class="overlay-sections">
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">PROJECT OBJECTIVE</h3>
+            <p>An interactive and visually rich financial analytics dashboard engineered using Power BI, SQL, Python, and DAX. The platform synthesizes multi-source market data to provide institutional and retail investors with actionable, multi-perspective stock trend analysis, fundamental evaluations, and data-backed investment decision support.</p>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">SYSTEM ARCHITECTURE</h3>
+            <div class="case-arch-flow" aria-label="System architecture flow">
+              <div class="ca-node">YAHOO FINANCE API<br><small>+ Financial Filings</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">PYTHON ETL<br><small>Clean, Normalize, Aggregate</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">SQL DATABASE<br><small>Relational Star Schema</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">DAX MEASURES<br><small>ROE / EPS / Growth KPIs</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node ca-node--accent">POWER BI REPORTS<br><small>3 Interactive Views</small></div>
+              <div class="ca-arrow" aria-hidden="true">&rarr;</div>
+              <div class="ca-node">MARKET INSIGHTS<br><small>+ News Sentiment</small></div>
+            </div>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">3 CORE INTERACTIVE DASHBOARDS</h3>
+            <ul class="overlay-list">
+              <li><strong>01 &mdash; Overview Dashboard (Market Snapshot):</strong> Displays high-level market health and stock trajectory. Visualizes stock price trends (interactive line charts), trading volume movement (bar charts), sector-wise performance allocation (pie/donut charts), and real-time prices. Features dynamic multi-parameter slicers by ticker and custom date ranges, alongside key financial KPIs: Return on Equity (ROE), Earnings Per Share (EPS), and Price-to-Earnings (P/E) ratios.</li>
+              <li><strong>02 &mdash; Company Profile Dashboard (Fundamental Deep Dive):</strong> Showcases company-specific intelligence: enterprise name, sector classification, executive leadership (CEO), corporate headquarters location, branding/logo, business overview, total market capitalization, and competitive positioning within its industry peer group.</li>
+              <li><strong>03 &mdash; Key Metrics &amp; Financial Performance Dashboard:</strong> Combines fundamental analysis with technical momentum indicators. Charts multi-period Revenue, Net Profit, and EPS growth trajectories; tracks critical financial health ratios (ROE, P/E, Debt-to-Equity); and computes technical indicators including Moving Averages (SMA/EMA), Relative Strength Index (RSI), and MACD to evaluate financial resilience and optimal trade timing.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">ENGINEERING &amp; DATA PIPELINE HIGHLIGHTS</h3>
+            <ul class="overlay-list">
+              <li><strong>Multi-Source Data Ingestion:</strong> Built automated data pipelines pulling historical stock prices, fundamental SEC filings, and live market quotes via Yahoo Finance APIs.</li>
+              <li><strong>Python Preprocessing:</strong> Handled missing values, normalized volatile financial ratios, and aggregated raw tick data into daily, weekly, and monthly analytical time intervals.</li>
+              <li><strong>News Headline Sentiment Analysis:</strong> Integrated Python web scraping and NLP sentiment analysis on financial news headlines to quantify market mood and social sentiment surrounding target tickers.</li>
+              <li><strong>Advanced DAX &amp; Star Schema Modeling:</strong> Architected optimized star schemas in Power BI, writing complex DAX measures for dynamic time intelligence, moving averages, and cumulative returns while optimizing high-volume query load times.</li>
+            </ul>
+          </div>
+          <div class="overlay-block">
+            <h3 class="overlay-block-title">TECHNOLOGIES</h3>
+            <div class="overlay-tags" role="list">
+              <span role="listitem">Power BI</span>
+              <span role="listitem">SQL</span>
+              <span role="listitem">Python</span>
+              <span role="listitem">DAX</span>
+              <span role="listitem">Yahoo Finance API</span>
+              <span role="listitem">Financial Analytics</span>
+              <span role="listitem">Data Modeling (Star Schema)</span>
+              <span role="listitem">Technical Indicators (RSI / MACD)</span>
+              <span role="listitem">KPI Development</span>
+              <span role="listitem">Pandas</span>
+              <span role="listitem">NumPy</span>
+              <span role="listitem">NLP Sentiment Analysis</span>
+              <span role="listitem">ETL Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAGE 06 — ENGINEERING STACK
+       ============================================================ -->
+  <section id="stack" class="section section--stack">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">04</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">ENGINEERING STACK</h2>
+      </div>
+      <div class="stack-layout">
+        <div class="stack-categories" role="tablist" aria-label="Skill categories">
+          <button class="stack-cat active" data-cat="python"     role="tab" aria-selected="true"  aria-controls="panel-python">PYTHON</button>
+          <button class="stack-cat"        data-cat="data"       role="tab" aria-selected="false" aria-controls="panel-data">DATA</button>
+          <button class="stack-cat"        data-cat="aiml"       role="tab" aria-selected="false" aria-controls="panel-aiml">AI / ML</button>
+          <button class="stack-cat"        data-cat="genai"      role="tab" aria-selected="false" aria-controls="panel-genai">GENAI</button>
+          <button class="stack-cat"        data-cat="cloud"      role="tab" aria-selected="false" aria-controls="panel-cloud">CLOUD</button>
+          <button class="stack-cat"        data-cat="automation" role="tab" aria-selected="false" aria-controls="panel-automation">AUTOMATION</button>
+          <button class="stack-cat"        data-cat="telecom"    role="tab" aria-selected="false" aria-controls="panel-telecom">TELECOM</button>
+          <button class="stack-cat"        data-cat="databases"  role="tab" aria-selected="false" aria-controls="panel-databases">DATABASES</button>
+          <button class="stack-cat"        data-cat="tools"      role="tab" aria-selected="false" aria-controls="panel-tools">TOOLS</button>
+        </div>
+        <div class="stack-detail">
+          <div class="stack-panel active" id="panel-python" data-panel="python" role="tabpanel">
+            <div class="stack-panel-title">PROGRAMMING</div>
+            <div class="stack-items">
+              <span>Python</span><span>Java</span><span>C++</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-data" data-panel="data" role="tabpanel" hidden>
+            <div class="stack-panel-title">DATA ENGINEERING</div>
+            <div class="stack-items">
+              <span>ETL/ELT</span><span>Data Pipelines</span><span>Data Transformation</span>
+              <span>Data Validation</span><span>Data Quality</span><span>Data Processing</span>
+              <span>Data Modeling</span><span>Data Warehousing</span>
+            </div>
+            <div class="stack-panel-title" style="margin-top:1.5rem">DATA ANALYTICS</div>
+            <div class="stack-items">
+              <span>Power BI</span><span>DAX</span><span>KPI Development</span>
+              <span>Exploratory Data Analysis</span><span>Data Visualization</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-aiml" data-panel="aiml" role="tabpanel" hidden>
+            <div class="stack-panel-title">MACHINE LEARNING</div>
+            <div class="stack-items">
+              <span>Scikit-learn</span><span>TensorFlow</span>
+              <span>Supervised Learning</span><span>Unsupervised Learning</span>
+              <span>NLP</span><span>Classification</span><span>Regression</span>
+              <span>Feature Engineering</span><span>Data Preprocessing</span>
+              <span>Model Evaluation</span><span>Sentiment Analysis</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-genai" data-panel="genai" role="tabpanel" hidden>
+            <div class="stack-panel-title">GENERATIVE AI</div>
+            <div class="stack-items">
+              <span>LangChain</span><span>LangGraph</span><span>RAG</span>
+              <span>OpenAI API</span><span>Hugging Face</span><span>FAISS</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-cloud" data-panel="cloud" role="tabpanel" hidden>
+            <div class="stack-panel-title">CLOUD &amp; DEVOPS</div>
+            <div class="stack-items">
+              <span>Azure</span><span>Kubernetes</span><span>OpenShift</span>
+              <span>Docker</span><span>Helm</span><span>Jenkins</span>
+              <span>ArgoCD</span><span>Git</span><span>GitHub</span>
+              <span>GitOps</span><span>YAML</span><span>CI/CD</span>
+              <span>Release Validation</span><span>Software Versioning</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-automation" data-panel="automation" role="tabpanel" hidden>
+            <div class="stack-panel-title">AUTOMATION &amp; TESTING</div>
+            <div class="stack-items">
+              <span>Python Automation</span><span>Test Automation Framework</span>
+              <span>Robot Framework</span><span>Functional Testing</span>
+              <span>Regression Testing</span><span>Performance Testing</span>
+              <span>Deployment Validation</span>
+            </div>
+            <div class="stack-panel-title" style="margin-top:1.5rem">LINUX &amp; SCRIPTING</div>
+            <div class="stack-items">
+              <span>Linux</span><span>Linux CLI</span><span>Shell Scripting</span>
+              <span>Process Automation</span><span>File System Operations</span>
+              <span>Environment Validation</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-telecom" data-panel="telecom" role="tabpanel" hidden>
+            <div class="stack-panel-title">TELECOM</div>
+            <div class="stack-items">
+              <span>4G LTE</span><span>5G NR</span><span>RAN</span>
+              <span>Cloud RAN</span><span>CNF</span><span>vCU</span>
+              <span>vDU</span><span>RU</span><span>CU</span><span>DU</span>
+              <span>L2/L3 Protocols</span><span>CPRI/eCPRI</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-databases" data-panel="databases" role="tabpanel" hidden>
+            <div class="stack-panel-title">DATA &amp; DATABASES</div>
+            <div class="stack-items">
+              <span>SQL</span><span>PostgreSQL</span><span>ClickHouse</span>
+              <span>MongoDB</span><span>SQLite</span>
+            </div>
+            <div class="stack-panel-title" style="margin-top:1.5rem">SOFTWARE ENGINEERING</div>
+            <div class="stack-items">
+              <span>Data Structures &amp; Algorithms</span><span>OOPs</span>
+              <span>DBMS</span><span>Operating Systems</span>
+              <span>Computer Networks</span><span>Agile Methodologies</span>
+            </div>
+          </div>
+          <div class="stack-panel" id="panel-tools" data-panel="tools" role="tabpanel" hidden>
+            <div class="stack-panel-title">TOOLS</div>
+            <div class="stack-items">
+              <span>GitHub Copilot</span><span>Cursor</span><span>Jira</span>
+              <span>DBeaver</span><span>VS Code</span><span>Streamlit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 07 — EDUCATION
+       ============================================================ -->
+  <section id="education" class="section section--education">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">05</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">EDUCATION</h2>
+      </div>
+      <div class="edu-timeline">
+
+        <div class="edu-item" id="edu1" tabindex="0" role="button" aria-expanded="false" aria-label="Vellore Institute of Technology — Expand for details">
+          <div class="edu-item-main">
+            <div class="edu-left">
+              <span class="edu-year">2026</span>
+              <span class="edu-institution" aria-hidden="true">VIT</span>
+            </div>
+            <div class="edu-right">
+              <h3 class="edu-degree">Integrated M.Tech — Computer Science &amp; Engineering</h3>
+              <p class="edu-spec">Data Science Specialization &nbsp;&middot;&nbsp; Vellore Institute of Technology, Vellore</p>
+              <span class="edu-grade">CGPA 8.48 / 10.00</span>
+            </div>
+            <span class="edu-expand-icon" aria-hidden="true">+</span>
+          </div>
+          <div class="edu-detail" role="region">
+            <p>Five-year Integrated M.Tech programme in Computer Science and Engineering with Data Science Specialization at Vellore Institute of Technology, Vellore, India. Graduated 2026 with CGPA of 8.48/10.00.</p>
+          </div>
+        </div>
+
+        <div class="edu-item" id="edu2" tabindex="0" role="button" aria-expanded="false" aria-label="Narayana Junior College — Expand for details">
+          <div class="edu-item-main">
+            <div class="edu-left">
+              <span class="edu-year">2021</span>
+              <span class="edu-institution" aria-hidden="true">NJC</span>
+            </div>
+            <div class="edu-right">
+              <h3 class="edu-degree">Intermediate &mdash; MPC</h3>
+              <p class="edu-spec">Narayana Junior College, Hyderabad</p>
+              <span class="edu-grade">95.8%</span>
+            </div>
+            <span class="edu-expand-icon" aria-hidden="true">+</span>
+          </div>
+          <div class="edu-detail" role="region">
+            <p>Intermediate education in Mathematics, Physics, and Chemistry (MPC) at Narayana Junior College, Hyderabad, India. Completed 2021 with 95.8% marks.</p>
+          </div>
+        </div>
+
+        <div class="edu-item" id="edu3" tabindex="0" role="button" aria-expanded="false" aria-label="Ravindra Bharathi School — Expand for details">
+          <div class="edu-item-main">
+            <div class="edu-left">
+              <span class="edu-year">2019</span>
+              <span class="edu-institution" aria-hidden="true">RBS</span>
+            </div>
+            <div class="edu-right">
+              <h3 class="edu-degree">Secondary Education</h3>
+              <p class="edu-spec">Ravindra Bharathi School, Hyderabad</p>
+              <span class="edu-grade">GPA 9.7 / 10.0</span>
+            </div>
+            <span class="edu-expand-icon" aria-hidden="true">+</span>
+          </div>
+          <div class="edu-detail" role="region">
+            <p>Secondary education completed at Ravindra Bharathi School, Hyderabad, India in 2019 with GPA of 9.7/10.0.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 08 — CERTIFICATIONS
+       ============================================================ -->
+  <section id="certifications" class="section section--certs">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">06</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">CERTIFICATIONS</h2>
+      </div>
+      <div class="certs-list">
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true"><i class="fab fa-microsoft"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Microsoft Certified Azure AI Fundamentals</h3>
+            <span class="cert-code">AI-900</span>
+          </div>
+          <div class="cert-date">July 2024</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true"><i class="fas fa-database"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Apache CouchDB Distributed Database Certification</h3>
+            <span class="cert-code">Apache Foundation</span>
+          </div>
+          <div class="cert-date">August 2024</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true"><i class="fas fa-chart-bar"></i></div>
+          <div class="cert-info">
+            <h3 class="cert-name">Cisco Certified Data Analytics Essentials</h3>
+            <span class="cert-code">Cisco</span>
+          </div>
+          <div class="cert-date">February 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 09 — HACKATHON / BEYOND THE CODE
+       ============================================================ -->
+  <section id="hackathon" class="section section--hackathon">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-num accent" aria-hidden="true">07</span>
+        <span class="section-rule" aria-hidden="true"></span>
+        <h2 class="section-label">BEYOND THE CODE</h2>
+      </div>
+      <div class="hackathon-block">
+        <div class="hack-status-row">
+          <span class="hack-dot" aria-hidden="true"></span>
+          <span class="hack-status-label">SELECTED</span>
+        </div>
+        <h3 class="hack-title">&ldquo;Accelerate Her in Tech&rdquo; Hackathon</h3>
+        <div class="hack-meta">
+          <span class="hack-org">Nokia</span>
+          <span class="hack-sep" aria-hidden="true">&middot;</span>
+          <span class="hack-date">March 2025</span>
+        </div>
+        <p class="hack-desc">Selected participant in Nokia's technical hackathon, contributing to an innovation-focused coding challenge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 10 — CONTACT
+       ============================================================ -->
+  <section id="contact" class="section section--contact">
+    <div class="section-inner section-inner--contact">
+      <h2 class="display-contact">
+        <span>LET'S</span>
+        <span>BUILD</span>
+        <span>SOMETHING</span>
+        <span class="accent">USEFUL.</span>
+      </h2>
+      <div class="contact-links" role="list">
+        <a href="mailto:charankatta49@gmail.com" class="contact-link-item" role="listitem">
+          <span class="contact-link-label">EMAIL</span>
+          <span class="contact-link-value">charankatta49@gmail.com <span class="link-arrow" aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a href="https://github.com/sattacharan" target="_blank" rel="noopener noreferrer" class="contact-link-item" role="listitem">
+          <span class="contact-link-label">GITHUB</span>
+          <span class="contact-link-value">github.com/sattacharan <span class="link-arrow" aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a href="https://linkedin.com/in/katta-sai-charan" target="_blank" rel="noopener noreferrer" class="contact-link-item" role="listitem">
+          <span class="contact-link-label">LINKEDIN</span>
+          <span class="contact-link-value">katta-sai-charan <span class="link-arrow" aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a href="tel:+919949805144" class="contact-link-item" role="listitem">
+          <span class="contact-link-label">PHONE</span>
+          <span class="contact-link-value">+91 9949805144 <span class="link-arrow" aria-hidden="true">&rarr;</span></span>
+        </a>
+      </div>
+      <div class="contact-bottom">
+        <a href="mailto:charankatta49@gmail.com" class="btn-primary">START A CONVERSATION &rarr;</a>
+        <p class="contact-location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i>&nbsp; Hyderabad, Telangana, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Katta Sai Charan</span>
+      <span class="footer-sep" aria-hidden="true">&mdash;</span>
+      <span class="footer-tagline">Data &middot; AI &middot; Cloud &middot; Automation</span>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top">&#8593;</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
