@@ -130,4 +130,3 @@ This project is licensed under the **MIT License** &mdash; see the [LICENSE](LIC
 * **Author:** Katta Sai Charan
 * **GitHub:** [@kattacharan](https://github.com/kattacharan)
 * **LinkedIn:** [katta-sai-charan](https://linkedin.com/in/katta-sai-charan)
-* **Location:** Bengaluru / Hyderabad, India
